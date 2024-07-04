@@ -1,4 +1,6 @@
+import SecurityCamera from "../../../Components/SecurityCameras/SecurityCamera";
 import Banner from "../Banner/Banner";
+import BrandsLogo from "../BrandsLogo/BrandsLogo";
 import NewArrival from "../NewArrival/NewArrival";
 import PopularProducts from "../PopularProducts/PopularProducts";
 
@@ -19,6 +21,13 @@ const Home = () => {
             </div>
 
             <PopularProducts></PopularProducts>
+
+            <div className="mt-5">
+                <img className="w-full h-[150px] md:h-[200px] lg:h-[250px]" src="https://i.ibb.co/DkHnKyS/dilwali-offers.jpg" alt="" />
+            </div>
+            <SecurityCamera></SecurityCamera>
+
+            <BrandsLogo></BrandsLogo>
         </div>
     );
 };
