@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import Brands from "../Pages/Brands/Brands";
 import Dashboard from "../Dashboard/Dashboard/Dashboard";
 import Profile from "../Dashboard/Profile";
+import DeliveryAddress from "../Pages/DashboardPage/DeliveryAddress";
 // import PersonaLinfo from "../Dashboard/UserDashboard/Profile";
 
 
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/profile',
                 element: <Profile></Profile>
-            }
+            },
+            {
+                path: '/dashboard/address',
+                element: <DeliveryAddress></DeliveryAddress>
+            },
         ]
     }
 

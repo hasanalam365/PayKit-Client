@@ -11,25 +11,39 @@ import Navber from "../../Shared/Navber/Navber";
 const Dashboard = () => {
 
     const dashNavLinks = <>
-        <NavLink to="/dashboard/profile" className='flex gap-3 items-center justify-center hover:text-orange-600'>
+        <NavLink to="/dashboard/profile" className={({ isActive }) =>
+            `flex gap-3 items-center justify-center hover:text-orange-600 ${isActive ? 'text-orange-600' : ''
+            }`
+        }>
             <MdOutlinePersonalInjury />
             <li>Personal Info</li>
         </NavLink>
-        <NavLink className='flex gap-3 items-center justify-center hover:text-orange-600'>
+        <NavLink className={({ isActive }) =>
+            `flex gap-3 items-center justify-center hover:text-orange-600 ${isActive ? 'text-orange-600' : ''
+            }`
+        }>
             <FiShoppingBag />
             <li>My Orders</li>
         </NavLink>
-        <NavLink className='flex gap-3 items-center justify-center hover:text-orange-600'>
+        <NavLink to="/dashboard/address" className={({ isActive }) =>
+            `flex gap-3 items-center justify-center hover:text-orange-600 ${isActive ? 'text-orange-600' : ''
+            }`
+        }>
             <TiHomeOutline />
             <li>Address</li>
         </NavLink>
 
-        <NavLink className='flex gap-3 items-center justify-center hover:text-orange-600'>
+        <NavLink className={({ isActive }) =>
+            `flex gap-3 items-center justify-center hover:text-orange-600 ${isActive ? 'text-orange-600' : ''
+            }`
+        }>
             <AiOutlineLogout />
             <li>Logout</li>
         </NavLink>
 
     </>
+
+
 
     return (
         <div>
@@ -37,14 +51,14 @@ const Dashboard = () => {
             <div className="mt-5 bg-gray-50 mb-5 p-16 flex ">
                 {/* navItems */}
                 <div className="w-1/4 ">
-                    <ul className="flex flex-col items-start space-y-1 font-medium">
+                    <ul className="flex flex-col items-start space-y-2 font-medium">
                         {dashNavLinks}
 
                     </ul>
                 </div>
 
                 {/* Info Items */}
-                <div className="w-2/4">
+                <div className="w-3/4">
 
                     <Outlet></Outlet>
                 </div>
