@@ -22,7 +22,7 @@ const Banner = () => {
                 pagination={{
                     clickable: true,
                 }}
-                navigation={true}
+
                 modules={[Autoplay, Navigation]}
                 className="mySwiper"
             >

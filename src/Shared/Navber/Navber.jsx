@@ -2,8 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineShoppingCart } from "react-icons/hi";
+import { useState } from "react";
 
 const Navber = () => {
+
+    const [isOpenProfile, setIsOpenProfile] = useState(false)
 
     const navLinks = <>
         <NavLink>
@@ -99,7 +102,9 @@ const Navber = () => {
                 <div className="hidden md:block lg:block">
                     <div className="flex gap-4 ml-5 mr-5">
                         <FaRegHeart className="text-xl"></FaRegHeart>
-                        <CgProfile className="text-xl"></CgProfile>
+                        <button onClick={() => setIsOpenProfile(!isOpenProfile)}>
+                            <CgProfile className="text-xl"></CgProfile>
+                        </button>
                         <div className="relative flex">
 
                             <HiOutlineShoppingCart className="text-xl"></HiOutlineShoppingCart>
@@ -108,6 +113,18 @@ const Navber = () => {
                             </div>
                         </div>
                     </div>
+                    {
+                        isOpenProfile && <div className="absolute z-10 p-4 bg-green-100 top-16 right-16 rounded-lg">
+                            <ul className="font-medium space-y-1">
+                                <li className="hover:text-orange-600">
+                                    <Link to="/dashboard/profile">My Profile</Link>
+                                </li>
+                                <li className="hover:text-orange-600">
+                                    <Link>My Orders</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    }
                 </div>
 
             </div>
