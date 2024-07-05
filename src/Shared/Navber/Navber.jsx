@@ -66,17 +66,17 @@ const Navber = () => {
 
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 gap-5 font-medium">
-                    <NavLink>
+                <ul className="menu menu-horizontal px-1 gap-5 text-lg font-medium">
+                    <NavLink className='hover:text-orange-600'>
                         <li>Trending</li>
                     </NavLink>
-                    <NavLink>
+                    <NavLink to='/brands' className='hover:text-orange-600'>
                         <li>Brands</li>
                     </NavLink>
-                    <NavLink>
+                    <NavLink className='hover:text-orange-600'>
                         <li>Service Center</li>
                     </NavLink>
-                    <NavLink>
+                    <NavLink className='hover:text-orange-600'>
                         <li>Blogs</li>
                     </NavLink>
                 </ul>
