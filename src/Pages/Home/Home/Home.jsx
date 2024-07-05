@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import BrandsLogo from "../BrandsLogo/BrandsLogo";
 import NewArrival from "../NewArrival/NewArrival";
 import PopularProducts from "../PopularProducts/PopularProducts";
+import ServiceSection from "../ServiceSection";
 
 const Home = () => {
     return (
@@ -27,7 +28,10 @@ const Home = () => {
             </div>
             <SecurityCamera></SecurityCamera>
 
+            <div className="divider"></div>
             <BrandsLogo></BrandsLogo>
+            <div className="divider"></div>
+            <ServiceSection></ServiceSection>
         </div>
     );
 };
