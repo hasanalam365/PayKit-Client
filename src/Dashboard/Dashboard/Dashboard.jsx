@@ -16,21 +16,21 @@ const Dashboard = () => {
             }`
         }>
             <MdOutlinePersonalInjury />
-            <li>Personal Info</li>
+            <li className="hidden md:hidden lg:block">Personal Info</li>
         </NavLink>
         <NavLink className={({ isActive }) =>
             `flex gap-3 items-center justify-center hover:text-orange-600 ${isActive ? 'text-orange-600' : ''
             }`
         }>
             <FiShoppingBag />
-            <li>My Orders</li>
+            <li className="hidden md:hidden lg:block">My Orders</li>
         </NavLink>
         <NavLink to="/dashboard/address" className={({ isActive }) =>
             `flex gap-3 items-center justify-center hover:text-orange-600 ${isActive ? 'text-orange-600' : ''
             }`
         }>
             <TiHomeOutline />
-            <li>Address</li>
+            <li className="hidden md:hidden lg:block">Address</li>
         </NavLink>
 
         <NavLink className={({ isActive }) =>
@@ -38,7 +38,7 @@ const Dashboard = () => {
             }`
         }>
             <AiOutlineLogout />
-            <li>Logout</li>
+            <li className="hidden md:hidden lg:block">Logout</li>
         </NavLink>
 
     </>
@@ -46,19 +46,25 @@ const Dashboard = () => {
 
 
     return (
-        <div>
+        <div className="">
             <Navber></Navber>
-            <div className="mt-5 bg-gray-50 mb-5 p-16 flex ">
+            <div className="mt-5 bg-gray-50 mb-5p-2 md:p-2 lg:p-16 flex ">
                 {/* navItems */}
-                <div className="w-1/4 ">
+                <div className="w-1/4 hidden md:hidden lg:block">
                     <ul className="flex flex-col items-start space-y-2 font-medium">
                         {dashNavLinks}
 
                     </ul>
                 </div>
 
+                <div className=" fixed w-full ms-auto bg-gray-400 p-2 bottom-0 lg:hidden ">
+                    <ul className="flex flex-row items-start justify-center gap-5 text-3xl font-medium w-3/4 mx-auto">
+                        {dashNavLinks}
+
+                    </ul>
+                </div>
                 {/* Info Items */}
-                <div className="w-3/4">
+                <div className="w-full  lg:w-3/4" >
 
                     <Outlet></Outlet>
                 </div>

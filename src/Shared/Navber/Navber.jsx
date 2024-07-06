@@ -113,6 +113,7 @@ const Navber = () => {
                             </div>
                         </div>
                     </div>
+
                     {
                         isOpenProfile && <div className="absolute z-10 p-4 bg-green-100 top-16 right-16 rounded-lg">
                             <ul className="font-medium space-y-1">
