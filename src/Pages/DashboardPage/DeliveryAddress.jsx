@@ -28,7 +28,7 @@ const DeliveryAddress = () => {
 
     return (
         <div>
-            <section className="  dark:text-gray-900 w-3/4">
+            <section className="  dark:text-gray-900 w-[95%] mx-auto bg-gray-200">
                 <form onSubmit={handleAddress} className="container flex flex-col mx-auto space-y-12">
                     <fieldset className=" p-6 rounded-md shadow-sm dark:bg-gray-50">
 
@@ -68,11 +68,11 @@ const DeliveryAddress = () => {
                             </div>
 
                         </div>
-                        <div className="flex gap-1">
-                            <div onClick={() => setSelect(1)} className={`border-2 p-4 max-w-max rounded-lg ${select === 1 ? 'border-green-400 font-medium' : ''}`}>
+                        <div className="flex gap-1 mt-4">
+                            <div onClick={() => setSelect(1)} className={`border-2  p-4 max-w-max rounded-lg ${select === 1 ? 'border-green-400 font-medium' : 'border-gray-300'}`}>
                                 Home
                             </div>
-                            <div onClick={() => setSelect(2)} className={`border-2 p-4 max-w-max rounded-lg ${select === 2 ? 'border-green-400 font-medium' : ''}`}>
+                            <div onClick={() => setSelect(2)} className={`border-2 p-4  max-w-max rounded-lg ${select === 2 ? 'border-green-400 font-medium' : 'border-gray-300 '}`}>
                                 Office
                             </div>
                         </div>
