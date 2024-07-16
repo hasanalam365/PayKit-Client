@@ -1,17 +1,17 @@
-import { Outlet } from "react-router-dom";
-import Navber from "../Shared/Navber/Navber";
-import Footer from "../Shared/Footer/Footer";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
+
 
 
 const MainLayout = () => {
     return (
         <div>
             <div className="container mx-auto">
-                <Navber></Navber>
-                <Outlet></Outlet>
+                <Login></Login>
+                <Register></Register>
 
             </div>
-            <Footer></Footer>
+
         </div>
     );
 };
