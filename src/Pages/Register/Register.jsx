@@ -25,6 +25,7 @@ const Register = () => {
         const userInfo = { name, phone, password, email, role, action, status }
 
         const res = await axiosPublic.post('/users', userInfo)
+        console.log(res.data)
 
 
     }
