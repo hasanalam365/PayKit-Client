@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useNavigate } from "react-router-dom";
 
@@ -19,8 +19,27 @@ const Login = () => {
 
         const res = await axiosPublic.get(`/user/${checkPhone}/${checkPassword}`)
 
-        console.log(res.data)
+        // console.log(res.data)
 
+        try {
+            if (!res.data) {
+                localStorage.removeItem('access-token')
+            }
+            else {
+
+                const userInfo = { email: res.data.email }
+
+                const res2 = await axiosPublic.post('/jwt', userInfo)
+                if (res2.data.token) {
+                    localStorage.setItem('access-token', res2.data.token)
+
+                    navigate('/home')
+                }
+            }
+        }
+        catch {
+            console.log('something is wrong')
+        }
         // if (!res.data._id) {
         //     alert('wrong phone/password')
         // }
@@ -72,4 +91,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Login; 
