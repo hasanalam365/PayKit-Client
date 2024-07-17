@@ -5,6 +5,10 @@ import Register from "../Pages/Register/Register";
 
 
 const MainLayout = () => {
+
+    const tokenCheck = localStorage.getItem('access-token')
+    console.log(tokenCheck)
+
     return (
         <div>
             <div className="container mx-auto">
