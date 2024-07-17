@@ -18,7 +18,7 @@ const Login = () => {
 
 
         const res = await axiosPublic.get(`/user/${checkPhone}/${checkPassword}`)
-
+        console.log(res.data)
         // console.log(res.data)
 
         try {
@@ -29,6 +29,9 @@ const Login = () => {
 
                 const userInfo = { email: res.data.email }
                 const setEmail = res.data.email
+
+
+
                 const res2 = await axiosPublic.post('/jwt', userInfo)
                 if (res2.data.token) {
                     localStorage.setItem('access-token', res2.data.token)

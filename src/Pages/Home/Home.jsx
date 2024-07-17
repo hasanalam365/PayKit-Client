@@ -6,7 +6,8 @@ const Home = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('access-token')
-        alert('token remove done')
+        localStorage.removeItem('user-email')
+
         navigate('/login')
     }
 
