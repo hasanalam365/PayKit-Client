@@ -1,11 +1,12 @@
 import { useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
 
     const axiosPublic = useAxiosPublic()
     const [errorText, setErrorText] = useState('')
-
+    const navigate = useNavigate()
 
     const handleRegister = async (e) => {
         e.preventDefault()
@@ -26,6 +27,10 @@ const Register = () => {
 
         const res = await axiosPublic.post('/users', userInfo)
         console.log(res.data)
+
+        if (res.data.insertedId) {
+            navigate('/login')
+        }
 
 
     }
